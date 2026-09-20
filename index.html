@@ -1,106 +1,423 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="gu" class="dark">
 <head>
-  <!-- Basic -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Master the Market – Beginner's Guide</title>
-  <meta name="description" content="100% free stock market education. Learn chart reading, technical analysis, and risk management. No buy/sell tips. For learning purpose only.">
-  <link rel="canonical" href="https://example.com/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Gujarati Trader - Free Financial Literacy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#080b10',
+                        cardDark: '#111722',
+                        cardBorder: '#1c2536',
+                        goldAccent: '#f5c02a',
+                        emeraldAccent: '#10b981',
+                        telegramBlue: '#2aabee',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Hind Vadodara', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 
-  <!-- Performance -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #07090e;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(245, 192, 42, 0.08) 0%, transparent 60%),
+                radial-gradient(circle at 50% 30%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 50% 100%, rgba(42, 171, 238, 0.06) 0%, transparent 70%);
+            color: #e2e8f0;
+            font-family: 'Inter', 'Hind Vadodara', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+            overflow-x: hidden;
+        }
 
-  <!-- Favicons (optional) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+        /* Continuous Rotating Gradient Ring */
+        @keyframes spinGradient {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .animate-spin-ring {
+            animation: spinGradient 6s linear infinite;
+        }
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Master the Market – Beginner's Guide">
-  <meta property="og:description" content="Learn charts & risk management. No buy/sell tips. 100% educational.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://example.com/">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1516251193007-45ef944ab0c6?q=80&w=1600&auto=format&fit=crop">
+        /* Pulsing Glow Effect */
+        @keyframes glowPulse {
+            0%, 100% { opacity: 0.55; transform: scale(1); }
+            50% { opacity: 0.95; transform: scale(1.04); }
+        }
+        .glow-pulse {
+            animation: glowPulse 3s ease-in-out infinite;
+        }
 
-  <!-- Minimal CSS (inline for speed) -->
-  <style>
-    :root{
-      --bg1:#0c0c1d;
-      --bg2:#1a1a2b;
-      --brand: #ff6699;
-      --brand-2:#00f0ff;
-      --text:#ffffff;
-      --muted:#b5b5c3;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background:
-        linear-gradient(135deg, rgba(0,0,0,.45), rgba(0,0,0,.45)),
-        url('https://images.unsplash.com/photo-1516251193007-45ef944ab0c6?q=80&w=1600&auto=format&fit=crop') no-repeat center/cover fixed;
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-      min-height:100vh;
-    }
-    .container{
-      max-width:520px; margin:0 auto; padding:24px 18px; text-align:center; min-height:100vh; display:flex; flex-direction:column; justify-content:center;
-      backdrop-filter: saturate(130%);
-    }
-    .badge{display:inline-block; font-size:.78rem; padding:6px 10px; border:1px solid #2a2a3a; border-radius:999px; color:#d6eaff; background:rgba(0,240,255,.08); margin-bottom:14px}
-    h1{font-size:1.9rem; line-height:1.2; margin:6px 0 10px; background:linear-gradient(90deg,var(--brand-2),var(--brand)); -webkit-background-clip:text; background-clip:text; color:transparent;}
-    .sub{font-size:1rem; color:var(--muted); margin:0 auto 16px; max-width:36ch}
-    .pill{
-      display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:rgba(0,255,153,.07); border:1px dashed rgba(0,255,153,.35); color:#d8ffe9; font-size:.9rem; margin:6px 0 18px;
-    }
-    ul.bullets{list-style:none; padding:0; margin:0 0 18px}
-    ul.bullets li{margin:8px 0; color:#e9eef9}
-    .cta{
-      display:inline-block; text-decoration:none; background:var(--brand); color:#041b14; padding:14px 18px; font-weight:700; border-radius:12px; box-shadow:0 0 0 0 rgba(0,255,153,.6); transform:translateZ(0);
-      transition:transform .15s ease;
-      animation:pulse 1.6s infinite;
-    }
-    .cta:active{transform:scale(.98)}
-    @keyframes pulse{
-      0%{box-shadow:0 0 0 0 rgba(0,255,153,.55)}
-      70%{box-shadow:0 0 0 20px rgba(0,255,153,0)}
-      100%{box-shadow:0 0 0 0 rgba(0,255,153,0)}
-    }
-    .fineprint{font-size:.86rem; color:var(--muted); margin:18px auto 0; max-width:44ch}
-    .disclaimer{font-size:.78rem; color:#9aa4b2; margin:18px auto 0; max-width:50ch}
-    .safe{display:flex; align-items:center; justify-content:center; gap:8px; margin-top:14px; color:#a1ffd6; font-size:.9rem}
-    .shield{width:18px; height:18px; display:inline-block; border-radius:4px; background:linear-gradient(135deg,#0df,#0f9)}
-    footer{opacity:.8; margin-top:22px; font-size:.78rem; color:#9aa4b2}
-  </style>
+        /* Shimmer Effect for CTA Button */
+        @keyframes shimmerWave {
+            0% { transform: translateX(-150%); }
+            100% { transform: translateX(150%); }
+        }
+        .animate-shimmer {
+            animation: shimmerWave 2.8s infinite;
+        }
+
+        /* Button Breathing Pulse */
+        @keyframes buttonPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(42, 171, 238, 0.4), 0 0 35px rgba(42, 171, 238, 0.15); }
+            50% { box-shadow: 0 0 32px rgba(42, 171, 238, 0.75), 0 0 50px rgba(42, 171, 238, 0.35); }
+        }
+        .cta-glow-pulse {
+            animation: buttonPulse 2.5s infinite ease-in-out;
+        }
+
+        /* Staggered Load Animation */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(18px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+
+        /* Live Indicator Pulsing Dot */
+        @keyframes livePulse {
+            0%, 100% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            50% { transform: scale(1.2); opacity: 0.8; box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+        }
+        .live-dot-pulse {
+            animation: livePulse 1.8s infinite ease-in-out;
+        }
+
+        /* Glowing text effect */
+        .text-glow-gold {
+            text-shadow: 0 0 12px rgba(245, 192, 42, 0.45);
+        }
+        .text-glow-emerald {
+            text-shadow: 0 0 12px rgba(16, 185, 129, 0.45);
+        }
+
+        /* Flag Animated Line */
+        .flag-gradient {
+            background: linear-gradient(90deg, #ff9933 0%, #ffffff 50%, #138808 100%);
+            box-shadow: 0 0 12px rgba(255, 153, 51, 0.4);
+        }
+
+        /* Custom Scrollbar for Modal Body */
+        .modal-body::-webkit-scrollbar {
+            width: 4px;
+        }
+        .modal-body::-webkit-scrollbar-thumb {
+            background: #232e42;
+            border-radius: 4px;
+        }
+    </style>
 </head>
-<body>
-  <main class="container">
-    <span class="badge">100% Educational • Policy Safe</span>
-    <h1>Master the Market – Beginner's Guide</h1>
-    <p class="sub">Learn index behaviour & risk management</p>
+<body class="min-h-screen flex flex-col items-center justify-between pb-8 select-none">
 
-    <div class="pill">🚫 No Buy/Sell Tips • ✅ For Learning Purpose Only</div>
+    <!-- Top Sticky Header -->
+    <header class="w-full max-w-md px-4 py-3 flex items-center justify-between border-b border-gray-800/80 sticky top-0 bg-[#07090e]/90 backdrop-blur-md z-30">
+        <div class="flex items-center space-x-2.5">
+            <!-- Header Mini Logo with Glow -->
+            <div class="relative w-8 h-8 rounded-full flex items-center justify-center p-0.5">
+                <div class="absolute inset-0 rounded-full bg-gradient-to-r from-amber-400 to-emerald-500 animate-spin-ring opacity-80 blur-[1px]"></div>
+                <div class="relative w-full h-full rounded-full bg-black flex items-center justify-center p-1">
+                    <svg viewBox="0 0 100 100" class="w-full h-full">
+                        <circle cx="50" cy="50" r="45" fill="#07090e" stroke="#f5c02a" stroke-width="6"/>
+                        <path d="M25 68 L45 42 L60 55 L78 30" stroke="#10b981" stroke-width="9" stroke-linecap="round" fill="none"/>
+                    </svg>
+                </div>
+            </div>
+            <span class="font-extrabold text-base text-white tracking-wide">
+                Gujarati <span class="text-goldAccent text-glow-gold">Trader</span>
+            </span>
+        </div>
 
-    <ul class="bullets" aria-label="What you'll learn">
-      <li>• Chart basics & risk rules (no return promises)</li>
-      <li>• How to read trends without speculation</li>
-      <li>• Market discipline & common mistakes</li>
-    </ul>
+        <!-- Animated Live Status Badge -->
+        <div class="flex items-center space-x-1.5 px-3 py-1 rounded-full bg-emerald-950/70 border border-emerald-500/40 text-emerald-400 text-xs font-bold shadow-sm shadow-emerald-900/50">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 live-dot-pulse"></span>
+            <span class="tracking-wider">LIVE</span>
+        </div>
+    </header>
 
-    <!-- CTA goes to a page-specific bridge -->
-    <a class="cta" href="bridge-lp72.html" rel="nofollow">Start Learning</a>
+    <!-- Main Center Content -->
+    <main class="w-full max-w-md px-4 flex-1 flex flex-col items-center pt-6 space-y-5">
 
-    <div class="safe"><span class="shield" aria-hidden="true"></span> Ad Policy Friendly Content</div>
+        <!-- Glowing Circular Profile Logo Section -->
+        <div class="flex flex-col items-center text-center fade-in-up" style="animation-delay: 0.1s;">
+            <div class="relative mb-4 group cursor-pointer">
+                <!-- Outer Pulsing Glow Blur -->
+                <div class="absolute -inset-2 rounded-full bg-gradient-to-r from-amber-500 via-emerald-400 to-blue-500 blur-lg opacity-70 glow-pulse"></div>
+                
+                <!-- Rotating Border Ring -->
+                <div class="relative w-32 h-32 rounded-full p-[3px] bg-gradient-to-tr from-amber-400 via-emerald-400 to-amber-500 animate-spin-ring shadow-2xl">
+                    <!-- Inner Container -->
+                    <div class="w-full h-full rounded-full bg-[#090d14] flex flex-col items-center justify-center p-2.5 text-center border border-amber-500/30">
+                        <span class="text-goldAccent text-[12px] font-bold tracking-wide text-glow-gold">ગુજરાતી</span>
+                        <span class="text-white text-sm font-black tracking-widest my-0.5 drop-shadow-md">TRADER</span>
+                        <div class="w-8 h-[2px] bg-gradient-to-r from-amber-400 to-emerald-400 my-0.5 rounded-full"></div>
+                        <span class="text-[8px] text-emerald-400 font-semibold text-glow-emerald">સર્વશ્રેષ્ઠ શેર માર્કેટ</span>
+                    </div>
+                </div>
+            </div>
 
-    <p class="fineprint">We focus on concepts & frameworks suitable for beginners.</p>
-    <p class="disclaimer"><em>This website is for educational purposes only. We do not provide investment, trading, or financial advice.</em></p>
+            <!-- Indian Flag Animated Divider -->
+            <div class="w-44 h-1 flag-gradient rounded-full mb-3"></div>
 
-    <footer>© <span id="y"></span> Market Basics Learning Hub</footer>
-  </main>
+            <!-- Gujarati Tag Line -->
+            <span class="text-goldAccent text-xs font-bold tracking-widest uppercase text-glow-gold">ગુજરાતી ટ્રેડર</span>
+            <h1 class="text-2xl font-black text-white tracking-tight mt-0.5">
+                Gujarati <span class="text-goldAccent text-glow-gold">Trader</span>
+            </h1>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+            <p class="text-gray-200 text-xs font-medium mt-1">
+                • શીખો શેર બજાર ગુજરાતીમાં •
+            </p>
+
+            <p class="text-gray-400 text-[11px] mt-1 flex items-center justify-center gap-1">
+                Free Financial Literacy • Gujarat <span class="text-xs">🇮🇳</span> • ઉચિત
+            </p>
+
+            <!-- Educational Pill Tag -->
+            <div class="mt-3.5 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/40 text-amber-300 text-[11px] font-semibold shadow-inner">
+                <svg class="w-3.5 h-3.5 text-amber-400 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                </svg>
+                <span>Educational Awareness Only • Not Advice</span>
+            </div>
+        </div>
+
+        <!-- 3 Feature Metrics Columns -->
+        <div class="w-full grid grid-cols-3 gap-2.5 pt-1 fade-in-up" style="animation-delay: 0.2s;">
+            <div class="bg-cardDark border border-cardBorder hover:border-amber-500/50 transition-all duration-300 rounded-2xl p-3 text-center flex flex-col justify-center shadow-lg hover:-translate-y-0.5">
+                <span class="text-goldAccent font-bold text-xs sm:text-sm text-glow-gold">ઉચિત</span>
+                <span class="text-gray-400 text-[10px] mt-0.5 font-medium">Always Free</span>
+            </div>
+            <div class="bg-cardDark border border-cardBorder hover:border-emerald-500/50 transition-all duration-300 rounded-2xl p-3 text-center flex flex-col justify-center shadow-lg hover:-translate-y-0.5">
+                <span class="text-emerald-400 font-bold text-xs sm:text-sm text-glow-emerald">Daily</span>
+                <span class="text-gray-400 text-[10px] mt-0.5 font-medium">Education</span>
+            </div>
+            <div class="bg-cardDark border border-cardBorder hover:border-amber-500/50 transition-all duration-300 rounded-2xl p-3 text-center flex flex-col justify-center shadow-lg hover:-translate-y-0.5">
+                <span class="text-goldAccent font-bold text-xs sm:text-sm text-glow-gold">Gujarat</span>
+                <span class="text-gray-400 text-[10px] mt-0.5 font-medium">Community</span>
+            </div>
+        </div>
+
+        <!-- Main High-Converting Animated Telegram Button -->
+        <div class="w-full pt-1 fade-in-up" style="animation-delay: 0.3s;">
+            <a href="https://t.me/+Ivq8a9x-KOgwY2Jl" target="_blank" rel="noopener noreferrer" 
+               class="relative overflow-hidden w-full group inline-flex items-center justify-center px-6 py-4 text-base font-extrabold text-white bg-gradient-to-r from-blue-600 via-blue-500 to-telegramBlue rounded-2xl cta-glow-pulse active:scale-[0.97] transition-transform duration-150 border border-blue-400/30">
+                
+                <!-- Continuous Shimmer Glow Over Overlay -->
+                <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/25 to-transparent animate-shimmer pointer-events-none"></div>
+
+                <!-- Telegram Icon -->
+                <svg class="w-6 h-6 mr-3 fill-current transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-200" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                </svg>
+
+                <span class="tracking-wide">Free માં Join થાઓ</span>
+
+                <!-- Animated Arrow Badge -->
+                <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Educational Topics List Cards -->
+        <div class="w-full space-y-3 pt-2">
+
+            <!-- Card 1 -->
+            <div class="bg-cardDark border border-cardBorder hover:border-amber-500/60 rounded-2xl p-4 flex items-start space-x-3.5 transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/5 hover:-translate-y-0.5 fade-in-up" style="animation-delay: 0.4s;">
+                <div class="p-3 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border border-amber-500/30 text-goldAccent shrink-0 mt-0.5 shadow-inner">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-white leading-snug">Market Awareness Basics</h3>
+                    <p class="text-goldAccent font-semibold text-xs mt-0.5 text-glow-gold">બજાર જ્ઞાન</p>
+                    <p class="text-gray-400 text-xs mt-1 leading-relaxed">How financial markets work — educational only</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-cardDark border border-cardBorder hover:border-amber-500/60 rounded-2xl p-4 flex items-start space-x-3.5 transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/5 hover:-translate-y-0.5 fade-in-up" style="animation-delay: 0.5s;">
+                <div class="p-3 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border border-amber-500/30 text-goldAccent shrink-0 mt-0.5 shadow-inner">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-white leading-snug">Financial News Reading</h3>
+                    <p class="text-goldAccent font-semibold text-xs mt-0.5 text-glow-gold">આર્થિક સમાચાર</p>
+                    <p class="text-gray-400 text-xs mt-1 leading-relaxed">Understand economic news in Gujarati</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-cardDark border border-cardBorder hover:border-amber-500/60 rounded-2xl p-4 flex items-start space-x-3.5 transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/5 hover:-translate-y-0.5 fade-in-up" style="animation-delay: 0.6s;">
+                <div class="p-3 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border border-amber-500/30 text-amber-400 shrink-0 mt-0.5 shadow-inner">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-white leading-snug">Risk Awareness</h3>
+                    <p class="text-goldAccent font-semibold text-xs mt-0.5 text-glow-gold">જોખમ જાગૃતિ</p>
+                    <p class="text-gray-400 text-xs mt-1 leading-relaxed">Understanding financial risk — essential</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-cardDark border border-cardBorder hover:border-emerald-500/60 rounded-2xl p-4 flex items-start space-x-3.5 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/5 hover:-translate-y-0.5 fade-in-up" style="animation-delay: 0.7s;">
+                <div class="p-3 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border border-emerald-500/30 text-emerald-400 shrink-0 mt-0.5 shadow-inner">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-white leading-snug">Index Education</h3>
+                    <p class="text-goldAccent font-semibold text-xs mt-0.5 text-glow-gold">સૂચકઆંક શિક્ષણ</p>
+                    <p class="text-gray-400 text-xs mt-1 leading-relaxed">Market indices — general awareness only</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="w-full max-w-md px-4 pt-8 text-center border-t border-gray-800/60 mt-6">
+        <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-gray-400 font-medium">
+            <button onclick="openModal('terms')" class="hover:text-goldAccent transition-colors py-1 px-1.5 active:text-goldAccent">Terms</button>
+            <span class="text-gray-700">•</span>
+            <button onclick="openModal('about')" class="hover:text-goldAccent transition-colors py-1 px-1.5 active:text-goldAccent">About Us</button>
+            <span class="text-gray-700">•</span>
+            <button onclick="openModal('disclaimer')" class="hover:text-goldAccent transition-colors py-1 px-1.5 active:text-goldAccent">Disclaimer</button>
+            <span class="text-gray-700">•</span>
+            <button onclick="openModal('contact')" class="hover:text-goldAccent transition-colors py-1 px-1.5 active:text-goldAccent">Contact Us</button>
+        </div>
+        <p class="text-[10px] text-gray-500 mt-3 font-medium">
+            © <script>document.write(new Date().getFullYear())</script> Gujarati Trader. All Rights Reserved.
+        </p>
+    </footer>
+
+    <!-- Reusable Dynamic Popup Modal -->
+    <div id="modalOverlay" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 transition-opacity duration-200">
+        <div class="bg-cardDark border border-amber-500/30 rounded-2xl w-full max-w-sm max-h-[85vh] flex flex-col shadow-2xl shadow-amber-500/10 overflow-hidden transform scale-90 opacity-0 transition-all duration-200" id="modalContainer">
+            
+            <!-- Modal Header -->
+            <div class="px-5 py-3.5 border-b border-gray-800 flex items-center justify-between bg-slate-900/60">
+                <h2 id="modalTitle" class="text-sm font-bold text-goldAccent text-glow-gold">Modal Title</h2>
+                <button onclick="closeModal()" class="w-7 h-7 flex items-center justify-center rounded-full bg-gray-800 text-gray-400 hover:text-white active:scale-90 transition-transform">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Modal Body Content -->
+            <div id="modalBody" class="p-5 overflow-y-auto modal-body text-xs text-gray-300 space-y-3 leading-relaxed">
+                <!-- Injected via JavaScript -->
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-3 border-t border-gray-800/80 text-center bg-slate-900/40">
+                <button onclick="closeModal()" class="px-6 py-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold rounded-xl text-xs shadow-md shadow-amber-500/20 active:scale-95 transition-all">
+                    બંધ કરો (Close)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script handling modal content and state -->
+    <script>
+        const modalData = {
+            terms: {
+                title: "Terms & Conditions",
+                content: `
+                    <p class="font-bold text-white text-sm">ગુજરાતી ટ્રેડર નિયમો અને શરતો (Terms of Use)</p>
+                    <p>1. <strong>માત્ર શૈક્ષણિક હેતુ:</strong> આ પ્લેટફોર્મ અને ટેલિગ્રામ ચેનલમાં શેર કરવામાં આવતી તમામ માહિતી માત્ર શૈક્ષણિક અને જાગૃતિ હેતુ માટે જ છે.</p>
+                    <p>2. <strong>કોઈ સલાહ નથી:</strong> અમે SEBI રજિસ્ટર્ડ એડવાઈઝર નથી. અહીં કોઈ સ્ટોક ખરીદવા કે વેચવાની ટીપ્સ અથવા ભલામણો આપવામાં આવતી નથી.</p>
+                    <p>3. <strong>જવાબદારી:</strong> શેરબજાર રોકાણ જોખમને આધીન છે. તમારા કોઈપણ નાણાકીય નુકસાન માટે Gujarati Trader જવાબદાર રહેશે નહીં.</p>
+                `
+            },
+            about: {
+                title: "About Gujarati Trader",
+                content: `
+                    <p class="font-bold text-white text-sm">અમારા વિશે (About Us)</p>
+                    <p><strong>Gujarati Trader</strong> એ ગુજરાતના લોકો માટે નાણાકીય સાક્ષરતા (Financial Literacy) વધારવા માટેનું એક સ્વતંત્ર માધ્યમ છે.</p>
+                    <p>અમારો મુખ્ય હેતુ ગુજરાતી ભાષામાં શેરબજારની મૂળભૂત બાબતો, સમાચાર વાંચન અને જોખમ વ્યવસ્થાપન સમજાવવાનો છે જેથી દરેક વ્યક્તિ સમજી-વિચારીને નિર્ણય લઈ શકે.</p>
+                `
+            },
+            disclaimer: {
+                title: "Disclaimer",
+                content: `
+                    <p class="font-bold text-amber-400 text-sm">અસ્વીકરણ (Disclaimer)</p>
+                    <p>• શેરબજારમાં રોકાણ કરવું એ નાણાકીય જોખમ ભરેલું છે. કોઈ પણ નિર્ણય લેતા પહેલા તમારા રજિસ્ટર્ડ ફાઇનાન્સિયલ એડવાઇઝરની સલાહ જરૂર લો.</p>
+                    <p>• અમે ક્યારેય પણ ગેરંટીડ પ્રોફિટ કે પેઇડ ટિપ્સ આપતા નથી. કોઈ પણ ફ્રોડ વ્યક્તિથી સાવધ રહેવું.</p>
+                    <p>• Educational Purpose Only. Not SEBI Registered.</p>
+                `
+            },
+            contact: {
+                title: "Contact Us",
+                content: `
+                    <p class="font-bold text-white text-sm">સંપર્ક કરો (Contact Us)</p>
+                    <p>કોઈપણ પ્રશ્ન કે શૈક્ષણિક માર્ગદર્શન માટે તમે અમારા સત્તાવાર ટેલિગ્રામ ચેનલ દ્વારા સંપર્ક કરી શકો છો.</p>
+                    <div class="mt-3 p-3 bg-slate-900 rounded-xl border border-gray-800 space-y-2">
+                        <p><strong>Telegram Link:</strong> <a href="https://t.me/+Ivq8a9x-KOgwY2Jl" target="_blank" class="text-blue-400 underline font-semibold">Join Gujarati Trader</a></p>
+                        <p><strong>Language:</strong> Gujarati / English</p>
+                    </div>
+                `
+            }
+        };
+
+        function openModal(key) {
+            const data = modalData[key];
+            if (!data) return;
+
+            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalBody').innerHTML = data.content;
+
+            const overlay = document.getElementById('modalOverlay');
+            const container = document.getElementById('modalContainer');
+
+            overlay.classList.remove('hidden');
+            setTimeout(() => {
+                container.classList.remove('scale-90', 'opacity-0');
+                container.classList.add('scale-100', 'opacity-100');
+            }, 10);
+
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const overlay = document.getElementById('modalOverlay');
+            const container = document.getElementById('modalContainer');
+
+            container.classList.remove('scale-100', 'opacity-100');
+            container.classList.add('scale-90', 'opacity-0');
+
+            setTimeout(() => {
+                overlay.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 180);
+        }
+
+        // Close when clicking outside of the modal frame
+        document.getElementById('modalOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
