@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Gujarati Trader - Free Financial Literacy</title>
+    <title>Gujarati Trader - Free Guide</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
@@ -159,15 +159,17 @@
                 <!-- Outer Pulsing Glow Blur -->
                 <div class="absolute -inset-2 rounded-full bg-gradient-to-r from-amber-500 via-emerald-400 to-blue-500 blur-lg opacity-70 glow-pulse"></div>
                 
-                <!-- Rotating Border Ring -->
-                <div class="relative w-32 h-32 rounded-full p-[3px] bg-gradient-to-tr from-amber-400 via-emerald-400 to-amber-500 animate-spin-ring shadow-2xl">
-                    <!-- Inner Profile Image Container -->
-                    <div class="w-full h-full rounded-full bg-[#090d14] flex items-center justify-center overflow-hidden border border-amber-500/30">
-                        <!-- Main Logo Image (Easily changeable via src attribute) -->
+                <!-- Rotating Border Ring Layer -->
+                <div class="relative w-32 h-32 rounded-full p-[3px]">
+                    <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-amber-400 via-emerald-400 to-amber-500 animate-spin-ring shadow-2xl"></div>
+                    
+                    <!-- Inner Profile Image Container (Static & Perfectly Centered) -->
+                    <div class="relative w-full h-full rounded-full bg-[#090d14] flex items-center justify-center overflow-hidden border border-amber-500/30 z-10">
+                        <!-- Main Logo Image (Completely static and non-distorting) -->
                         <img 
-                            src="Gujrati2.jpeg" 
+                            src="https://placehold.co/300x300/080b10/f5c02a?text=%E0%AA%97%E0%AA%BF%E0%AA%9C%E0%AA%B0%E0%AA%BE%E0%AA%A4%E0%AB%80%0ATRADER" 
                             alt="Gujarati Trader Main Logo" 
-                            class="w-full h-full object-cover rounded-full transform group-hover:scale-105 transition-transform duration-300"
+                            class="w-full h-full object-cover rounded-full transform group-hover:scale-105 transition-transform duration-300 pointer-events-none select-none"
                             onerror="this.onerror=null; this.src='https://placehold.co/300x300/080b10/f5c02a?text=GT';"
                         />
                     </div>
